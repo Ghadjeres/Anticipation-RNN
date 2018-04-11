@@ -12,7 +12,6 @@ import click
 app = Flask(__name__)
 CORS(app)
 
-app.config['UPLOAD_FOLDER'] = './uploads'
 ALLOWED_EXTENSIONS = {'midi'}
 
 # INITIALIZATION
@@ -24,9 +23,6 @@ _current_tensor_chorale = None
 _current_tensor_metadata = None
 _current_chorale = None
 model = None
-
-# generation parameters
-batch_size_per_voice = 8
 
 
 @click.command()
@@ -87,16 +83,6 @@ def init_app(note_embedding_dim,
     # launch the script
     # accessible only locally:
     app.run()
-
-
-@app.route('/test', methods=['POST', 'GET'])
-def test_generation():
-    response = make_response(('TEST', xml_response_headers))
-
-    if request.method == 'POST':
-        print(request)
-
-    return response
 
 
 @app.route('/models', methods=['GET'])
@@ -176,19 +162,6 @@ def insert_metadata(output_chorale):
     output_chorale.metadata.title = 'Anticipation-RNN'
     output_chorale.metadata.composer = 'GH'
 
-
-def parse_request(req):
-    """
-    must cast
-    :param req:
-    :return:
-    """
-    measure_index = req.args.get('measureIndex')
-    if measure_index is not None:
-        measure_index = int(req.args.get('measureIndex'))
-
-    return {'measure_index': measure_index
-            }
 
 
 def chorale_to_xml_response(chorale):
