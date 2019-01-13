@@ -486,7 +486,7 @@ class ChoraleDataset(MusicDataset):
                         part.append(f)
 
                     dur = 1
-                    f = standard_note(index2note[note_index])
+                    f = standard_note(index2note[note_index.item()])
                 else:
                     dur += 1
             # add last note
