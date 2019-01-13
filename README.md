@@ -1,5 +1,5 @@
 # Anticipation-RNN
-Code accompanying the [article](https://link.springer.com/article/10.1007/s00521-018-3868-4):
+Code accompanying the [article](https://link.springer.com/article/10.1007/s00521-018-3868-4)
 
 *Anticipation-RNN: enforcing unary constraints in sequence generation,
  with
@@ -21,11 +21,23 @@ Anticipation-RNN works on wide variety
  of music datasets (Bach, 
 Folk, Jazz, etc.) and can also cope with additional metadata (such as the current beat, current 
 key, etc.).
-   
+  
+Examples from the paper can be listened to [here](
+https://sites.google.com/view/anticipation-rnn-examples/accueil)
  
 ## Usage
+The `environment.yml` contains a Anaconda virtual environment you can create and load with
+```
+conda env create --name arnn -f environment.yml
+source activate arnn
+```
 
-`python anticipationRNN.py` loads the pretrained model, generates a six-bar melody using the set
+The command 
+```
+python anticipationRNN.py
+```
+loads the pretrained model, generates a six-bar melody using
+ the set
  of 
 constraints 3 from the paper (see Fig. 3) and opens the generated score in Musescore.
 
