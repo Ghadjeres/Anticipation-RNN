@@ -23,7 +23,7 @@ Folk, Jazz, etc.) and can also cope with additional metadata (such as the curren
 key, etc.).
   
 Examples from the paper can be listened to [here](
-https://sites.google.com/view/anticipation-rnn-examples/accueil)
+https://sites.google.com/view/anticipation-rnn-examples/accueil).
  
 ## Usage
 The `environment.yml` contains a Anaconda virtual environment you can create and load with
