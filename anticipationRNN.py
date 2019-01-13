@@ -6,6 +6,7 @@ from DatasetManager.dataset_manager import DatasetManager
 from DatasetManager.metadata import TickMetadata
 from ARNN.anticipationRNN import AnticipationRNN
 
+
 @click.command()
 @click.option('--note_embedding_dim', default=20,
               help='size of the note embeddings')
